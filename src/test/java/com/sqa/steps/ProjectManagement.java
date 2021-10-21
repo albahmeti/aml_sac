@@ -16,7 +16,7 @@ public class ProjectManagement {
 
     @Given("User is logged into Microsoft account")
     public void userIsLoggedIntoMicrosoftAccount() {
-        signin.signIn(environment.getUser(),environment.getPassword());
+        signin.signIn(environment.getUser(),new Encoder().decoder(environment.getPassword()));
     }
     @Given("user is on the SAC page")
     public void user_is_on_the_sac_page() {
